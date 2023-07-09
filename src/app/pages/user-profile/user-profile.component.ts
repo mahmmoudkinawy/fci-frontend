@@ -111,9 +111,9 @@ export class MyProfileComponent implements OnInit, OnDestroy {
             // const errorMessage = error.error.errors.Content[0];
             this.toastr.warning(error.error.text);
           } else {
-            this.toastr.warning(error.error);
+            // this.toastr.warning('You are already follow this user');
           }
-          console.error(error);
+          this.toastr.warning(error.error[0]);
         }
 
       );
