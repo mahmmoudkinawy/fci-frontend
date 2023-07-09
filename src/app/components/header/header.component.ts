@@ -33,6 +33,12 @@ export class HeaderComponent implements OnInit {
       routerLinkActiveOptions: { exact: true },
     },
     {
+      label: 'roadMap',
+      icon: 'pi pi-key',
+      routerLink: '/roadMap',
+      routerLinkActiveOptions: { exact: true },
+    },
+    {
       label: `me`,
       icon: 'pi pi-user',
       items: [

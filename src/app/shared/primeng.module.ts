@@ -24,6 +24,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { SkeletonModule } from 'primeng/skeleton';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { MenuModule } from 'primeng/menu';
+
 const PrimeNgComponents = [
   ButtonModule,
   AutoCompleteModule,

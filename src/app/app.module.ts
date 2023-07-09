@@ -25,6 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ChangePassComponent } from './pages/change-pass/change-pass.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { RoadmapComponent } from './pages/roadmap/roadmap.component';
+import { MapComponent } from './pages/map/map.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     LoadingComponent,
     ChangePassComponent,
     ResetPasswordComponent,
+    RoadmapComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
