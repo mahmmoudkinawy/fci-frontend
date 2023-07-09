@@ -1,0 +1,129 @@
+<p-tabView>
+  <app-loading *ngIf="isLoading"></app-loading>
+  <div *ngIf="isLoading; else content2">
+    <p-skeleton width="20rem" styleClass="mb-2"></p-skeleton>
+    <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>
+    <br>
+    <p-skeleton width="60%" height="380px" class="pos">
+    </p-skeleton>
+    <p-skeleton shape="circle" size="23rem" styleClass="mr-17" class="circle"></p-skeleton>
+
+  </div>
+  <ng-template #content2>
+    <p-tabPanel header="User Profile" leftIcon="pi pi-user">
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <div class="card">
+            <div class="imageBackground">
+              <img
+                src="https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80"
+                width="838" height="500" alt="icon Grad">
+            </div>
+            <div class="imageUser" *ngIf="userId">
+              <img src={{userData?.imageUrl}} width="400" height="340" alt="icon Grad">
+            </div>
+            <div class="imageUser">
+              <img src={{retrieveImage()}} width="400" height="340" alt="icon Grad">
+            </div>
+            <div class="userData ">
+              <h1>{{userData?.fullName|titlecase}}</h1>
+              <p> My name is {{userData?.fullName|titlecase}} 🎓. I work in the field of
+                programming. I graduated in ⏲️ {{userData?.graduationYear|date}} 😊. I joined this program
+                in {{userData?.joinedAt|date}} 😛.</p>
+            </div>
+            <br>
+          </div>
+          <div class="p-card">
+            <div *ngIf="userId">
+              <h3>You can Follow this profile 👉
+                <p-button class="follow" label="Follow" styleClass="p-button-link" icon="pi pi-user-plus"
+                  iconPos="right" [disabled]="isFollow" (click)="followUser()"></p-button>
+              </h3>
+
+
+              <h3>You can Send Message 👉
+                <p-button class="messsage" label="message" styleClass="p-button-link" icon="pi pi-send" iconPos="right"
+                  (click)="message(userId)"></p-button>
+              </h3>
+
+            </div>
+
+            <h3>information:-</h3>
+            <p> My name is {{userData?.fullName|titlecase}} 🎓. I work in the field of
+              programming. I graduated in ⏲️ {{userData?.graduationYear|date}} 😊. I joined this program
+              in {{userData?.joinedAt|date}} 😛.</p>
+            <h3> Gender:- {{userData?.gender}}</h3>
+            <h3>graduationYear:- {{userData?.graduationYear|date}}</h3>
+            <h3>joinedAt:- {{userData?.joinedAt|date}}</h3>
+          </div>
+        </div>
+        <div class="right">
+          <h4>{{userData?.fullName|titlecase}}</h4>
+
+          <p> My name is {{userData?.fullName|titlecase}} 🎓. I work in the field of
+            programming. I graduated in ⏲️ {{userData?.graduationYear|date}} 😊. I joined this program
+            in {{userData?.joinedAt|date}} 😛.</p>
+          <p><a href="https://www.facebook.com/mahmoud.khider.35?mibextid=ZbWKwL"><img src="./assets/images/img4.png"
+                alt="facebook icon" width="25px" />@{{userData?.fullName}}</a></p>
+          <p><a href="https://github.com/"><img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="facebook icon"
+                width="25px" />@{{userData?.fullName|titlecase}} 👻</a></p>
+          <h4>graduationYear:- {{userData?.graduationYear|date}} ⏲️</h4>
+
+        </div>
+      </div>
+      <br>
+
+      <div class="postCard" *ngFor="let post of userData?.posts">
+        <p-card>
+          <div class="header">
+            <img src={{userData?.imageUrl}} alt="icon Grad">
+            <span class="post-owner-name">
+              <h4>{{userData?.fullName|titlecase}}</h4>
+            </span>
+            <div class="creatAt">
+              <p>{{post.createdAt|date}}</p>
+            </div>
+          </div>
+
+          <br>
+          <p-divider></p-divider>
+          <p>{{post.content}}.</p>
+          <br>
+          <ng-container *ngIf="post.imageUrl">
+            <p-image src="{{post.imageUrl}}" width="820" height="700" [preview]="true"></p-image>
+          </ng-container>
+        </p-card>
+      </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Images" leftIcon="pi pi-camera">
+      <div class="ui-g">
+        <div class="form-group">
+          <div class="custom-file" *ngIf="!userId">
+            <input type="file" class="custom-file-input" (change)="addImage($event)" placeholder="addImage"
+              name="ImageFile" accept="image/*" />
+            <label class="custom-file-label" for="customFile">upload your image ⏫ </label>
+            <p-progressSpinner class='spinner' [style]="{width: '40px', height: '40px'}"
+              *ngIf="loading"></p-progressSpinner>
+          </div>
+        </div>
+        <br>
+        <br>
+        <p-card>
+          <div class="card2" *ngFor="let image of userData?.images">
+            <p-image src={{image?.imageUrl}} width="190" alt="refresh page to add image" [preview]="true"></p-image>
+            <a class="a-button" pButton (click)="setMainImage(image)" label="change to main">
+            </a>
+          </div>
+          <div *ngIf="userId">
+            <!-- <div class="card2" *ngFor="let image of userData?.images"> -->
+            <p-image src={{userData?.imageUrl}} width="190" alt="refresh page to add image" [preview]="true"></p-image>
+            <!-- </div> -->
+          </div>
+        </p-card>
+
+      </div>
+    </p-tabPanel>
+  </ng-template>
+</p-tabView>
