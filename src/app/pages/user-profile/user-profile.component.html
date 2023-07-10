@@ -1,3 +1,5 @@
+<section class="mt-5 pt-5">
+
 <p-tabView>
   <app-loading *ngIf="isLoading"></app-loading>
   <div *ngIf="isLoading; else content2">
@@ -117,9 +119,7 @@
             </a>
           </div>
           <div *ngIf="userId">
-            <!-- <div class="card2" *ngFor="let image of userData?.images"> -->
             <p-image src={{userData?.imageUrl}} width="190" alt="refresh page to add image" [preview]="true"></p-image>
-            <!-- </div> -->
           </div>
         </p-card>
 
@@ -127,3 +127,5 @@
     </p-tabPanel>
   </ng-template>
 </p-tabView>
+</section>
+

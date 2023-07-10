@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.persenceService.stopHubConnection();
     localStorage.removeItem('user');
-    window.location.href = '/';
+    window.location.href = '/login';
   }
 
   private setCurrentUser() {
