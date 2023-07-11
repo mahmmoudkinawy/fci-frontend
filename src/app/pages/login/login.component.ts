@@ -6,8 +6,6 @@ import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 import { AccountService } from 'src/app/services/account.service';
-import { LoadingComponent } from 'src/app/components/loading/loading.component';
-import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private accountService: AccountService,
     private router: Router,
     private fb: FormBuilder,
-    private messageService: MessageService,
-    private toastr: ToastrService,
-    private loadingService:LoadingService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -36,9 +32,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private initLoginForm() {
     this.loginForm = this.fb.group({
-      email: ['mahmoudkhider775@gmail.com', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: [
-        'Pa$$w0rd',
+        '',
         [
           Validators.required,
           // Validators.pattern(
@@ -51,15 +47,14 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     this.accountService.login(this.loginForm?.value).subscribe(
-            () =>{
-              this.toastr.success('Sucess login');
-              this.router.navigateByUrl('/posts');
-
-            },
-            (error) => {
-              this.toastr.warning(error.error)
-              console.error(error);
-            }
+      () => {
+        this.toastr.success('Sucess login');
+        this.router.navigateByUrl('/posts');
+      },
+      (error) => {
+        this.toastr.warning(error.error);
+        console.error(error);
+      }
     );
   }
 
@@ -69,16 +64,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   submitForm() {
     const payload = { email: this.email };
-    this.accountService.sendForgotPasswordEmail(payload)
-      .subscribe(
-        () => {
-          this.toastr.info('send Success')
-          window.location.reload();
-        },
-        (error) => {
-          console.log(error)
-        }
-      );
+    this.accountService.sendForgotPasswordEmail(payload).subscribe(
+      () => {
+        this.toastr.info('send Success');
+        window.location.reload();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   ngOnDestroy(): void {

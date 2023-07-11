@@ -31,19 +31,19 @@
   </form>
 
   <p-dialog class="dialog" header="Forgot Password" [(visible)]="display" [style]="{width: '35vw', height:'24vw'}"
-  [modal]="true" [draggable]="true" [resizable]="false" [maximizable]="true">
+    [modal]="true" [draggable]="true" [resizable]="false" [maximizable]="true">
 
-  <form (ngSubmit)="submitForm()" class="forgot-password-form">
-    <div class="form-group">
-      <label for="email">Email</label>
+    <form (ngSubmit)="submitForm()" class="forgot-password-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <br>
+        <input type="email" pInputText class="p-inputtext" id="email" name="email" [(ngModel)]="email" required>
+      </div>
       <br>
-      <input type="email" pInputText class="p-inputtext" id="email" name="email" [(ngModel)]="email" required>
-    </div>
-    <br>
-    <button type="submit" pButton class="p-button" label="Submit"></button>
-  </form>
+      <button type="submit" pButton class="p-button" label="Submit"></button>
+    </form>
 
-</p-dialog>
+  </p-dialog>
 
 
 </section>

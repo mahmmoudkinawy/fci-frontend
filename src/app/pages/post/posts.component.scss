@@ -35,6 +35,7 @@
   }
   .card {
     width: 100%;
+    border-radius: 20px;
   }
   .header {
     position: absolute;
@@ -57,11 +58,15 @@
       color: $mainColor;
     }
   }
+  .content {
+    margin-left: 20px;
+    color: #4e4e4e;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
 .right {
   // border: 3px solid;
   position: relative;
-  left: 0%;
 }
 .card {
   img {
@@ -130,23 +135,27 @@ button {
 
 .all {
   display: flex;
-
+  // border:1px solid #000;
+  width: 104%;
+  position: relative;
+  right: 40px;
+  top: -10px;
+  background-color: #f7f6f6;
   .left {
+    border: 1px solid #fff;
+    background-color: #fff;
     padding: 10px;
     width: 100%;
-    // margin:-1%;
-    // box-shadow: 3px 5px 10px 7px rgba(0.1, 0, 0, 0.1);
+    margin-top: 10px;
     border-radius: 10px;
 
     .left-sidebar {
-      // Add your styles for the left sidebar here
-
       .profile-name {
         background-color: $mainColor;
         background-size: cover;
         width: 100%;
         min-height: 90px;
-        border-radius: 4px;
+        border-radius: 7px;
         padding: 10px 20px;
         color: #fff;
         margin-bottom: 40px;
@@ -302,125 +311,137 @@ button {
       bottom: 2%;
       margin-top: 1%;
     }
-
     .dialog {
-      // Add your styles for the dialog here
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+    }
 
-      section {
-        // Add your styles for the section within the dialog here
+    .dialog .ui-dialog-titlebar {
+      display: none;
+    }
 
-        form {
-          // Add your styles for the form within the section here
+    .dialog-content {
+      padding: 20px;
+    }
 
-          .cont {
-            padding: 10px;
+    .dialog-content form {
+      display: flex;
+      flex-direction: column;
+    }
 
-            textarea {
-              width: 100%;
-              height: 130px;
-              padding: 20px;
-              border: 1px solid #e2e2e2;
-              font-size: 16px;
-            }
+    .dialog-content form .form-group {
+      margin-bottom: 20px;
+    }
+    .create-button {
+      padding: 0.5rem 1rem;
+      background-color: $mainColor;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
 
-            button {
-              // Add your styles for the submit button here
-            }
-          }
-        }
+      &:disabled {
+        background-color: #9d9c9c;
+        cursor: not-allowed;
       }
+
+      &:hover {
+        background-color: darken($mainColor, 10%);
+      }
+    }
+
+    .upload-container img {
+      margin-right: 5px;
+      width: 26px;
+      height: 26px;
+    }
+
+    .dialog-content form textarea {
+      width: 100%;
+      height: 130px;
+      padding: 20px;
+      border: 1px solid #e2e2e2;
+      font-size: 16px;
+    }
+
+    .dialog-content form .upload-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .dialog-content form .upload-container label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .dialog-content form .upload-container label i {
+      margin-right: 5px;
+    }
+
+    .dialog-content form .upload-container input[type="file"] {
+      display: none;
+    }
+
+    .spinner {
+      margin-left: 10px;
     }
   }
 }
-
-$secondaryColor: #6c757d;
 
 .dialog {
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-  .dialog-content {
-    padding: 2rem;
-
-    .form-group {
-      margin-bottom: 1.5rem;
-
-      textarea {
-        width: 100%;
-        resize: vertical;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-      }
-
-      label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      input[type="file"] {
-        display: flex;
-        border: 2px solid black;
-        padding: 4px;
-        border-radius: 20px;
-        background-color: #080909;
-        color: #ccc;
-      }
-
-      .create-button {
-        padding: 0.5rem 1rem;
-        background-color: $mainColor;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s;
-        display: flex;
-        align-items: center;
-
-        &:disabled {
-          background-color: $secondaryColor;
-          cursor: not-allowed;
-        }
-
-        &:hover {
-          background-color: darken($mainColor, 10%);
-        }
-
-        i {
-          margin-right: 0.5rem;
-        }
-      }
-    }
-  }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 .dialog .ui-dialog-titlebar {
-  background-color: $mainColor;
-  color: #fff;
-  border-radius: 8px 8px 0 0;
-  border: none;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  display: none;
 }
 
-.dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
-  color: #fff;
+.dialog-content {
+  padding: 20px;
 }
 
-.dialog .ui-dialog-content {
-  padding: 1rem;
+.dialog-content form {
+  display: flex;
+  flex-direction: column;
 }
 
-.dialog .ui-dialog-footer {
-  padding: 1rem;
-  background-color: #f5f5f5;
-  border-radius: 0 0 8px 8px;
-  border-top: 1px solid #ccc;
+.dialog-content form .form-group {
+  margin-bottom: 20px;
+}
+
+.dialog-content form textarea {
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.dialog-content form .form-group img {
+  margin-right: 5px;
+  width: 26px;
+  height: 26px;
+}
+
+.dialog-content form .form-group input[type="file"] {
+  display: none;
+}
+
+.dialog-content form .create-button {
+  width: 100px;
+  align-self: flex-end;
+}
+
+.spinner {
+  margin-left: 10px;
 }
 
 p-image {
@@ -465,33 +486,15 @@ p-image {
   width: 100%;
   height: 60px;
   padding: 5px;
+
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  // padding: 10px;
+  font-size: 14px;
 }
 
 .comment-section .comment-form button {
-  margin-top: 5px;
-}
-
-.comment-section .comment-list {
-  margin-top: 10px;
-}
-
-.comment-section .comment-item {
-  margin-bottom: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-}
-
-.comment-section .comment-item .comment-owner {
-  font-weight: bold;
-}
-
-.comment-section .comment-item .comment-date {
-  font-size: 12px;
-  color: #888;
-}
-
-.comment-section .comment-item .comment-content {
   margin-top: 5px;
 }
 
@@ -501,45 +504,38 @@ p-image {
   background-color: #fff;
   color: #6c757d;
 }
-.comment-section {
-  margin-top: 20px;
-}
 
-.load-comments-button {
-  background-color: #8f8e8e;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
+.comment-section2 {
+  width: 100%;
 }
 
 .comment {
-  width: 80%;
-  height: 90px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  padding: 5px;
-  border: none;
+  // display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 20px;
   background-color: #f2f2f2;
 }
 
 .comment-content {
   margin: 0;
+  flex: 1;
 }
 
 .comment-date {
-  margin-top: 5px;
+  margin-left: 40px;
   font-size: 12px;
   color: #888;
 }
 
 .comment-owner-image {
-  width: 50px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-top: 10px;
+  margin-right: 10px;
 }
+
 .header2 {
   display: flex;
   img {
@@ -551,8 +547,10 @@ p-image {
 
 .post-creator {
   width: 100%;
-  box-shadow: 3px 5px 5px 7px rgba(182, 180, 180, 0.1);
   padding: 10px;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 10px;
   margin-bottom: 20px;
   img {
     border: 7px solid #ffffff;
@@ -581,7 +579,10 @@ p-image {
   border: none;
   cursor: pointer;
 }
-
+.image-post {
+  margin-left: 26px;
+  margin-right: 26px;
+}
 .post-button:hover {
   background-color: #45a049;
 }
@@ -594,12 +595,12 @@ p-image {
     color: #939292;
   }
 }
-
+//right
 .users {
   margin: 10px;
   width: 100%;
-  .title{
-    font-family:'Times New Roman', Times, serif;
+  .title {
+    font-family: "Times New Roman", Times, serif;
     text-align: center;
     color: $mainColor;
     font-weight: 30px;
@@ -608,7 +609,7 @@ p-image {
 }
 
 .user {
-  border-bottom:.8px double #ccc;
+  border-bottom: 0.8px double #ccc;
   margin-top: 3%;
   width: 100%;
 }
@@ -624,8 +625,11 @@ p-image {
 .headr {
   display: flex;
 }
-
+.user-button{
+  margin: 10px;
+  padding: 10px;
+  color: $mainColor;
+}
 .pi-envelope {
   margin-left: 40px;
 }
-
