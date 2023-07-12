@@ -1,41 +1,20 @@
 .post-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .post-card {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  box-sizing: border-box;
+  border-radius: 6px;
 }
 
 .card-header {
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.card-header h2 {
-  margin: 0;
+  text-align: center;
 }
 
 .card-body {
-  padding: 10px;
-  p{
-    color: #515151;
-    padding: 6px;
-  }
-}
-
-.card-body a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.card-body a:hover {
-  text-decoration: underline;
+  margin-top: 10px;
 }

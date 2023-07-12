@@ -135,8 +135,8 @@ export class CoursesComponent {
       link: 'https://bit.ly/43eZiT9',
     },
     {
-      title:'Etmana Summer Internship program',
-      description:`Summer internship program for students from Etmana Summer Internship program
+      title: 'Etmana Summer Internship program',
+      description: `Summer internship program for students from Etmana Summer Internship program
       Training is very important for students of computers and information and anyone interested in programming
       areas of training
       Data Admin
@@ -149,11 +149,11 @@ export class CoursesComponent {
       Good communication skills
       Ability to complete the training programme
       Passionate and has the ability to learn`,
-      link:'https://bit.ly/3NNMtJW'
+      link: 'https://bit.ly/3NNMtJW',
     },
     {
-      title:'learn Microsoft Excel online',
-      description:`All people and all disciplines 😮
+      title: 'learn Microsoft Excel online',
+      description: `All people and all disciplines 😮
       It sharks platform is home for a free course to learn Microsoft Excel online with a certificate as well
       Help each other and learn the program is very important in any job
       The course is available once you register on the website
@@ -161,58 +161,49 @@ export class CoursesComponent {
       The course is suitable for all disciplines
       A digital certificate after the end of the course
       - Available at any time, you can take the time you like`,
-      link:'https://bit.ly/3N83zU1'
-    }
+      link: 'https://bit.ly/3N83zU1',
+    },
   ];
   jobs = [
-    { title: 'Banque Misr jobs',
-    description: `Come on, people who ask a lot about a job for recent graduates
+    {
+      title: 'Banque Misr jobs',
+      description: `Come on, people who ask a lot about a job for recent graduates
     Banque Misr jobs 2023, with a salary of 7,500: 8,500, and an annual bonus of 14,000
     The job is Call Center, for fresh graduates from all faculties, the conditions are very simple`,
-    link: ' https://bit.ly/3O6teN6'
-  },
-  { title: 'Arab Bank jobs',
-  description: `Come on, Arab Bank jobs have been released for recent graduates 2021-2022 for graduates of commerce and systems 🏛️
+      link: ' https://bit.ly/3O6teN6',
+    },
+    {
+      title: 'Arab Bank jobs',
+      description: `Come on, Arab Bank jobs have been released for recent graduates 2021-2022 for graduates of commerce and systems 🏛️
   If you know someone who is still a fresh graduate, help them apply before the site closes ✋
   The estimate is good, the application is on LinkedIn, the conditions are very simple`,
-  link: 'http://bit.ly/3gCCGcx'
-},
-{ title: 'Jobs',
-description: `Are you looking for a job🧐 Check now the remote work jobs in the State of Kuwait available at `,
-link: 'https://lnkd.in/ec3aj_fr'
-},
- { title: 'Azure Synapse Analytics',
-description: `Technical Support Engineer - Azure Synapse Analytics`,
-link: ' https://tajjobs.com/job/technical-support-engineer-azure-synapse-analytics/'
-},
- { title: 'Software Development Engineer',
-description: `Grow your career in an environment that embraces your unique perspective and experience.`,
-link: 'https://tajjobs.com/job/software-development-engineer-6/'
-},
- { title: 'Mobile Engineer',
-description: `design, develop, and implement software programs for smartphones and other mobile devices.`,
-link: 'https://tajjobs.com/job/mobile-engineer/'
-},
-{ title: '',
-description: `Networking Singaporeans: We May Not Be Naturally Gifted, but Here’s How We Can Improve
+      link: 'http://bit.ly/3gCCGcx',
+    },
+    {
+      title: 'Jobs',
+      description: `Are you looking for a job🧐 Check now the remote work jobs in the State of Kuwait available at `,
+      link: 'https://lnkd.in/ec3aj_fr',
+    },
+    {
+      title: 'Azure Synapse Analytics',
+      description: `Technical Support Engineer - Azure Synapse Analytics`,
+      link: ' https://tajjobs.com/job/technical-support-engineer-azure-synapse-analytics/',
+    },
+    {
+      title: 'Software Development Engineer',
+      description: `Grow your career in an environment that embraces your unique perspective and experience.`,
+      link: 'https://tajjobs.com/job/software-development-engineer-6/',
+    },
+    {
+      title: 'Mobile Engineer',
+      description: `design, develop, and implement software programs for smartphones and other mobile devices.`,
+      link: 'https://tajjobs.com/job/mobile-engineer/',
+    },
+    {
+      title: 'Networking Singaporeans',
+      description: `Networking Singaporeans: We May Not Be Naturally Gifted, but Here’s How We Can Improve
 Networking may not come easily for everyone, but the fact is, it’s necessary for your career. Here’s some effective wisdom shared at our Workforce Singapore career event`,
-link: 'https://go.gov.sg/tel-networking-improve'
-},
- { title: 'aaaaaaaaa',
-description: `aaaaaaaaaaaaaaaaaaa`,
-link: 'https://www.google.com/about/careers/applications/jobs/results/111862882280317638-managing-director-large-customer-sales-retail-uki'
-},
- { title: '',
-description: ``,
-link: ''
-},
- { title: '',
-description: ``,
-link: ''
-},
- { title: '',
-description: ``,
-link: ''
-},
-];
+      link: 'https://go.gov.sg/tel-networking-improve',
+    },
+  ];
 }
