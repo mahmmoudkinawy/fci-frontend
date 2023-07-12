@@ -42,7 +42,7 @@ export class MyProfileComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.memberService.getOwnerData(this.userId).subscribe((userData) => {
       this.userData = userData;
-      console.log(userData);
+      console.log(this.userData);
       this.isLoading = false;
     });
   }
@@ -53,6 +53,8 @@ export class MyProfileComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.dispose$))
       .subscribe((userData) => {
         this.userData = userData;
+      console.log(this.userData);
+
         this.isLoading = false;
       });
   }
@@ -125,7 +127,9 @@ export class MyProfileComponent implements OnInit, OnDestroy {
       window.location.href = `/messages/${ownerId}`;
     });
   }
-
+  onImageError(event: any) {
+    event.target.src = 'assets/images/g2.png';
+  }
   ngOnDestroy(): void {
     this.dispose$.next(null);
     this.dispose$.complete();

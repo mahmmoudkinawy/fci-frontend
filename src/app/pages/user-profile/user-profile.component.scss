@@ -2,19 +2,19 @@
 
 .card {
   position: relative;
-  left: 18%;
-  width: 60%;
+  left: 10%;
+  width: 80%;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .imageBackground {
-  max-width: 80%;
-  border-radius: 3%;
+  max-width: 100%;
+  border-radius: 12px;
   img {
     position: relative;
-    // width: 125%;
+    width: 100%;
     border: 2px solid $mainColor;
-    border-radius: 3%;
+    border-radius: 12px;
   }
   button {
     position: absolute;
@@ -26,45 +26,45 @@
     color: $mainColor;
   }
 }
-.custom-file {
-  position: absolute;
-  top: 23%;
-  width: 80%;
-  height: calc(2em + 0.75rem + 2px);
-}
-.custom-file-input {
-  position: absolute;
-  z-index: 2;
-  width: 10%;
-  top: 25%;
-  right: 0;
-  left: 44%;
-  height: calc(1.5em + 0.75rem + 2px);
-  margin: 10px;
-  opacity: 0;
-}
+// .custom-file {
+//   position: absolute;
+//   top: 23%;
+//   width: 80%;
+//   height: calc(2em + 0.75rem + 2px);
+// }
+// .custom-file-input {
+//   position: absolute;
+//   z-index: 2;
+//   width: 10%;
+//   top: 25%;
+//   right: 0;
+//   left: 44%;
+//   height: calc(1.5em + 0.75rem + 2px);
+//   margin: 10px;
+//   opacity: 0;
+// }
 
-.custom-file-label {
-  position: absolute;
-  top: 27%;
-  right: 0;
-  left: 44%;
-  z-index: 1;
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  width: 20%;
-  line-height: 1.5;
-  color: #fff;
-  border-radius: 10px;
-  background-color: $mainColor;
-}
+// .custom-file-label {
+//   position: absolute;
+//   top: 27%;
+//   right: 0;
+//   left: 44%;
+//   z-index: 1;
+//   height: calc(1.5em + 0.75rem + 2px);
+//   padding: 0.375rem 0.75rem;
+//   width: 20%;
+//   line-height: 1.5;
+//   color: #fff;
+//   border-radius: 10px;
+//   background-color: $mainColor;
+// }
 .imageUser {
   width: 50%;
   img {
     position: absolute;
-    left: 30%;
-    top: 37%;
-    width: 40%;
+    left: 67%;
+    top: 30%;
+    width: 27%;
     border: 4px solid $mainColor;
     border-radius: 50%;
   }
@@ -79,24 +79,89 @@
   }
 }
 .userData {
-  margin-top: 20%;
+  margin-top: 8%;
   h1 {
+    width: 30%;
+    position: relative;
+    left: 65%;
     text-align: center;
   }
   p {
-    text-align: center;
-    position: relative;
-    left: 20%;
+    position: absolute;
+    top: 420px;
+    text-align: left;
+    padding: 20px;
     width: 60%;
+    font-size: 22px;
   }
 }
+.prof {
+  width: 390px;
+  position: relative;
+  left: 65%;
+  p-button {
+    border: 2px solid $mainColor;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 30px;
+    text-align: center;
+  }
+  .followButton {
+    background-color: $mainColor;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.custom-file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.custom-file input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.custom-file-label {
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background-color: $mainColor;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.custom-file-label img {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  padding: 4px;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
 .p-card {
   position: relative;
-  left: 18%;
-  width: 60%;
+  left: 10%;
+  width: 80%;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 3%;
+  margin-top: 2%;
   padding-bottom: 2%;
   h3 {
     text-align: center;
@@ -107,10 +172,10 @@
     text-align: center;
   }
 }
-.messsage{
- position: absolute;
- left: 64%;
- bottom: 75%;
+.messsage {
+  position: absolute;
+  left: 64%;
+  bottom: 75%;
 }
 .right {
   position: absolute;
@@ -162,7 +227,7 @@
 .header {
   position: absolute;
   top: -1%;
-  left: .4%;
+  left: 0.4%;
   display: flex;
   width: 40%;
   a {
@@ -186,15 +251,7 @@
   font-size: small;
   color: gray;
 }
-// .postCard {
-//   position: relative;
-//   left: 10%;
-//   margin: 3%;
-//   width: 70%;
-//   border-radius: 10px;
-//   box-shadow: 3px 5px 10px 7px rgba(0.1, 0, 0, 0.1);
 
-// }
 .postCard {
   position: relative;
   display: flex;
@@ -202,12 +259,14 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-
 }
 
 .postCard p-card {
   width: 80%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
   padding: 20px;
 }
 
@@ -233,7 +292,7 @@
 .postCard .creatAt {
   position: absolute;
   left: 12.5%;
-  top:35%;
+  top: 35%;
   margin-top: 20px;
 }
 
@@ -251,18 +310,17 @@
   right: 0;
   left: 40%;
 }
-.pos{
-  position:relative;
-  left:20%;
+.pos {
+  position: relative;
+  left: 20%;
 }
-.circle{
+.circle {
   position: absolute;
   left: 36%;
   top: 43%;
 }
-.follow{
+.follow {
   position: absolute;
-  top:2%;
-  font-size:large;
+  top: 2%;
+  font-size: large;
 }
-
