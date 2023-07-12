@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, takeUntil } from 'rxjs';
-import { Image, UserProfile } from 'src/app/models/userProfile';
+import { Post } from 'src/app/models/post';
+import { Image, Posts, UserProfile } from 'src/app/models/userProfile';
 import { FollowersService } from 'src/app/services/followers.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { MembersService } from 'src/app/services/members.service';
@@ -16,6 +17,7 @@ export class MyProfileComponent implements OnInit, OnDestroy {
   private readonly dispose$ = new Subject();
 
   userData: UserProfile | null = null;
+  userPosts:Posts[]|null=null;
   loading = false;
   userId: any;
   isFollow = false;
@@ -36,6 +38,7 @@ export class MyProfileComponent implements OnInit, OnDestroy {
       this.getOwnerData();
     } else {
       this.loadUserInfo();
+      this.loadCurrentUserPosts();
     }
   }
   getOwnerData() {
@@ -57,6 +60,14 @@ export class MyProfileComponent implements OnInit, OnDestroy {
 
         this.isLoading = false;
       });
+  }
+
+  private loadCurrentUserPosts(){
+    this.isLoading=true;
+    this.memberService.loadCurrentUserPost().subscribe((res:any)=>{
+      this.userPosts = res;
+     console.log(this.userPosts)
+    })
   }
 
   addImage(event: any) {

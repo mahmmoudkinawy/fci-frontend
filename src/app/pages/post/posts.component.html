@@ -238,7 +238,7 @@
                 <p-divider></p-divider>
                 <p class="content">{{post.content}}.</p>
                 <div *ngIf="post.postImageUrl" class="image-post">
-                  <img src="{{post.postImageUrl}}" style="height: 470px;" alt="post Image">
+                  <img src="{{post.postImageUrl}}" style="height: 470px;" [alt]="post.imageMetadata">
                 </div>
                 <p-divider></p-divider>
 

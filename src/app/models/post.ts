@@ -4,6 +4,7 @@ export interface Post {
   updatedAt: Date;
   content: string;
   postImageUrl?: string;
+  imageMetadata:string;
   isLikedByCurrentUser:boolean;
   userId: string;
   ownerId:string;

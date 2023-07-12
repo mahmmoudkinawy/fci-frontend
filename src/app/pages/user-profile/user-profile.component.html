@@ -78,6 +78,28 @@
           </ng-container>
         </p-card>
       </div>
+
+      <div class="postCard" *ngFor="let post of userPosts">
+        <p-card>
+          <div class="header">
+            <img src={{retrieveImage()}} [alt]="post.imageMetadata">
+            <span class="post-owner-name">
+              <h4>{{userData?.fullName|titlecase}}</h4>
+            </span>
+            <div class="creatAt">
+              <p>{{post.createdAt|date}}</p>
+            </div>
+          </div>
+
+          <br>
+          <p-divider></p-divider>
+          <p>{{post.content}}.</p>
+          <br>
+          <ng-container *ngIf="post.imageUrl">
+            <p-image src="{{post.imageUrl}}" width="820" height="450" [preview]="true"></p-image>
+          </ng-container>
+        </p-card>
+      </div>
     </p-tabPanel>
 
     <p-tabPanel header="Images" leftIcon="pi pi-camera">
@@ -102,7 +124,7 @@
           </div>
           <div *ngIf="userId">
             <!-- <div class="card2" *ngFor="let image of userData?.images"> -->
-            <p-image src={{userData?.imageUrl}} width="190" alt="He doesn't have any photos" [preview]="true"></p-image>
+            <p-image src={{userData?.images}} width="190" alt="He doesn't have any photos" [preview]="true"></p-image>
             <!-- </div> -->
           </div>
         </p-card>

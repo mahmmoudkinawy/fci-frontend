@@ -24,4 +24,5 @@ export interface Posts {
   updatedAt: string;
   content:string;
   imageUrl:string;
+  imageMetadata:string;
 }

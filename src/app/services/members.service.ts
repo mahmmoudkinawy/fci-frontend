@@ -15,6 +15,12 @@ export class MembersService {
     );
   }
 
+  loadCurrentUserPost(){
+    return this.http.get<UserProfile>(
+      `${environment.apiUrl}/v1/users/current-user-posts`
+    );
+  }
+
   addImage(image: FormData) {
     return this.http.post<Image>(
       `${environment.apiUrl}/v1/users/add-image`,
