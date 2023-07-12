@@ -17,6 +17,7 @@ import { ChangePassComponent } from './pages/change-pass/change-pass.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { RoadmapComponent } from './pages/roadmap/roadmap.component';
 import { MapComponent } from './pages/map/map.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'messages/:id', component: MessagesComponent },
       { path: 'roadMap', component: RoadmapComponent },
       { path: 'map/:id', component: MapComponent },
+      { path: 'courses', component: CoursesComponent },
     ],
   },
   { path: 'not-found', component: NotFoundComponent },

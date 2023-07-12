@@ -27,6 +27,7 @@ import { ChangePassComponent } from './pages/change-pass/change-pass.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { RoadmapComponent } from './pages/roadmap/roadmap.component';
 import { MapComponent } from './pages/map/map.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MapComponent } from './pages/map/map.component';
     ResetPasswordComponent,
     RoadmapComponent,
     MapComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,27 +4,26 @@ import { environment } from 'src/environments/environment';
 import { UserProfile } from '../models/userProfile';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FollowersService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   createFollow(destinationUserId: string) {
     return this.http.post(
-      `${environment.apiUrl}/v1/followers/${destinationUserId}`,destinationUserId
+      `${environment.apiUrl}/v1/followers/${destinationUserId}`,
+      destinationUserId
     );
   }
 
-  currentUserFollowers(){
+  currentUserFollowers() {
     return this.http.get<UserProfile[]>(
       `${environment.apiUrl}/v1/followers/current-user-followers`
     );
   }
-  currentUserFollowedBy(){
+  currentUserFollowedBy() {
     return this.http.get<UserProfile[]>(
       `${environment.apiUrl}/v1/followers/current-user-followed-by`
     );
   }
-
 }
