@@ -51,7 +51,7 @@
 
           <form *ngIf="messageForm" [formGroup]="messageForm" (ngSubmit)="sendMessage()" class="message-form">
             <input pInputText type="text" formControlName="content" placeholder="Type a message...">
-            <button pButton type="submit">Send</button>
+            <button pButton type="submit"><i class="pi pi-send"></i></button>
           </form>
 
         </p-card>
