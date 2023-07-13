@@ -286,12 +286,12 @@
                             (error)="onImageError($event)">
                           <h4>{{comment.commentOwner}}</h4>
                         </div>
-                        
-                        <p class="comment-content">{{ comment.content }}</p>
+                        <p [innerHTML]="sanitizeCommentContent(comment.content)" class="comment-content"></p>
                         <p class="comment-date">{{ comment.createdAt }}</p>
                       </div>
                     </p-scrollPanel>
                   </div>
+
                 </div>
               </p-card>
             </div>

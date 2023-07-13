@@ -516,10 +516,12 @@ p-image {
   border-radius: 20px;
   background-color: #f2f2f2;
   // height: 90%;
+  color: inherit;
 }
 
 .comment-content {
   margin-left: 40px;
+  color: inherit;
 }
 
 .comment-date {
@@ -541,9 +543,8 @@ p-image {
     width: 34px;
     height: 35px;
     margin-left: 30px;
-
   }
-  h4{
+  h4 {
     margin-top: 4px;
     position: relative;
     right: 20px;

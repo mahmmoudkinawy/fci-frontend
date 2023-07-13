@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, takeUntil } from 'rxjs';
-import { Pagination } from 'src/app/models/pagination';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+import { Pagination } from 'src/app/models/pagination';
 import { Post } from 'src/app/models/post';
 import { Comment } from 'src/app/models/comment';
 import { PostParams } from 'src/app/models/postParams';
@@ -54,7 +55,8 @@ export class PostsComponent implements OnInit, OnDestroy {
     private followersService: FollowersService,
     private accountService: AccountService,
     private toastr: ToastrService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private sanitizer: DomSanitizer
   ) {
     this.loggedInUserId = this.accountService.getLoggedInUserId();
   }
@@ -276,10 +278,28 @@ export class PostsComponent implements OnInit, OnDestroy {
     }
   }
 
+  wordColors: { word: any; color: any }[] = [
+    { word: 'congratulations', color: 'blue' },
+    { word: 'amazing', color: 'blue' },
+    { word: 'good', color: 'green' },
+    { word: 'awesome', color: 'purple' },
+    { word: 'fantastic', color: 'orange' },
+    { word: 'excellent', color: 'red' },
+  ];
+
   createComment(postId: string): void {
     if (this.commentForm) {
-      const content = this.commentForm.value.content;
-      // const ownerImageUrl = this.commentForm.value.ownerImageUrl;
+      let content = this.commentForm.value.content;
+
+      this.wordColors.forEach((wordColor) => {
+        const pattern = new RegExp(wordColor.word, 'gi');
+        const replacement = `<span style="color: ${wordColor.color} !important; font-size: 17px; font-weight: bold;" >
+        <i class="pi pi-book"></i>${wordColor.word}
+      </span>`;
+
+        content = content.replace(pattern, replacement);
+      });
+
       this.postsService.createComment(postId, content).subscribe((comment) => {
         this.comments.push(comment);
         this.commentForm?.reset();
@@ -287,12 +307,16 @@ export class PostsComponent implements OnInit, OnDestroy {
     }
   }
 
+  sanitizeCommentContent(content: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(content);
+  }
+
   postComments: { [postId: string]: Comment[] } = {};
 
   loadComments(postId: string): void {
     this.postsService.loadComment(postId).subscribe((comments) => {
       this.postComments[postId] = comments;
-      // console.log(this.postComments[postId]);
+      console.log('Loaded Comments:', this.postComments[postId]);
     });
   }
 
