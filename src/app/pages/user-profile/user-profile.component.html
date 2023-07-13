@@ -109,7 +109,8 @@
             <label for="imageInput" class="custom-file-label">
               <img src="assets/images/camera.png" alt="Camera Icon"> Upload your image
             </label>
-            <input type="file" class="custom-file-input" (change)="addImage($event)" id="imageInput" name="ImageFile" accept="image/*" />
+            <input *ngIf="!userId" type="file" class="custom-file-input" (change)="addImage($event)" id="imageInput" name="ImageFile" accept="image/*" />
+            <br>
             <p-progressSpinner class='spinner' [style]="{width: '40px', height: '40px'}" *ngIf="loading"></p-progressSpinner>
           </div>
 
@@ -118,16 +119,19 @@
         <br>
         <p-card>
           <div class="card2" *ngFor="let image of userData?.images">
-            <p-image src={{image?.imageUrl}} width="190" alt="He doesn't have any photos" [preview]="true"></p-image>
-            <a class="a-button" pButton (click)="setMainImage(image)" label="change to main">
+            <p-image src={{image?.imageUrl}} width="190" [alt]="image?.imageMetadata" [preview]="true"></p-image>
+            <a class="a-button" *ngIf="!userId" pButton (click)="setMainImage(image)" label="change to main">
             </a>
           </div>
-          <div *ngIf="userId">
-            <!-- <div class="card2" *ngFor="let image of userData?.images"> -->
-            <p-image src={{userData?.images}} width="190" alt="He doesn't have any photos" [preview]="true"></p-image>
-            <!-- </div> -->
+          <div *ngIf="userId && userData">
+            <div class="card2" *ngFor="let image of userData.images">
+              <!-- <p-image [src]="image.imageUrl" width="190" alt="He doesn't have any photos" [preview]="true"></p-image> -->
+            </div>
           </div>
+
         </p-card>
+
+
 
       </div>
     </p-tabPanel>

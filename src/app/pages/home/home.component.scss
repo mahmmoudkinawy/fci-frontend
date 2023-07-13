@@ -1,0 +1,60 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: #fff;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+.logo-image {
+  width: 200px;
+  height: 200px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.feature-card {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.feature-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #555;
+}

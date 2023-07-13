@@ -16,6 +16,7 @@ export interface Image {
     id: string;
     imageUrl: string;
     isMain: boolean;
+    imageMetadata:any;
 }
 
 export interface Posts {

@@ -284,11 +284,11 @@
                         <div class="header2">
                           <img [src]="comment.ownerImageUrl" alt="Owner Image" class="comment-owner-image"
                             (error)="onImageError($event)">
-                          <p class="comment-content">{{ comment.content }}</p>
+                          <h4>{{comment.commentOwner}}</h4>
                         </div>
-
+                        
+                        <p class="comment-content">{{ comment.content }}</p>
                         <p class="comment-date">{{ comment.createdAt }}</p>
-
                       </div>
                     </p-scrollPanel>
                   </div>

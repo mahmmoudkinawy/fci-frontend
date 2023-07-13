@@ -3,4 +3,5 @@ export interface Comment {
   content: string;
   createdAt: string;
   ownerImageUrl: string | null;
+  commentOwner:string;
 }
