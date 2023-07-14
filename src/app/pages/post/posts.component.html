@@ -207,7 +207,7 @@
                   name="content" id="content" formControlName="content" [value]="postData?.content"></textarea>
               </div>
               <div class="form-group">
-                <img src="assets/images/cam.png" alt="Camera Icon"> Click to Upload Image
+                <img src="assets/images/cam.png" alt="Camera Icon"> 
                 <input type="file" id="image" (change)="onImageChange($event)" accept="image/*" />
                 <p-progressSpinner class='spinner' [style]="{width: '40px', height: '40px'}"
                   *ngIf="loading"></p-progressSpinner>

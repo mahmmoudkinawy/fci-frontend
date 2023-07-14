@@ -432,7 +432,9 @@ button {
 }
 
 .dialog-content form .form-group input[type="file"] {
-  display: none;
+  position:relative;
+  // right:150px;
+  // display: none;
 }
 
 .dialog-content form .create-button {
