@@ -13,6 +13,7 @@
 <div class="all">
   <p-scrollPanel [style]="{ width:'400px',height: '950px' }">
     <div class="left">
+
       <div *ngIf="isLoading; else content1">
         <br>
         <div class="flex mb-3">
@@ -151,6 +152,7 @@
             </div>
           </form>
         </section>
+
       </p-dialog>
 
 
@@ -264,7 +266,6 @@
                       <i class="pi pi-comment"> comment</i>
                     </button>
                   </div>
-
                   <div *ngIf="commentForm" class="comment-section">
                     <div class="comment-form">
                       <form [formGroup]="commentForm">

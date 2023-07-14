@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MenuItem } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
 import { UserMessages } from 'src/app/models/message';
 import { UserProfile } from 'src/app/models/userProfile';
@@ -60,6 +61,7 @@ export class MessagesComponent implements OnInit {
     this.loadUsers();
   }
 
+  
   private loadMessages() {
     this.isLoading = true;
     this.messageService.loadMessages(this.userId).subscribe((message) => {
@@ -121,6 +123,7 @@ export class MessagesComponent implements OnInit {
     console.log(this.fullName);
     this.loadMessages();
   }
+
 
   removeMessage(messageId: any) {
     this.messageService.removeMessage(messageId).subscribe(() => {

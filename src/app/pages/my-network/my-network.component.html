@@ -12,6 +12,7 @@
   <ng-template #content2>
   <p-tabPanel header="followers" leftIcon="pi pi-users">
     <app-loading *ngIf="isLoading"></app-loading>
+    <p-scrollTop></p-scrollTop>
 
     <div class="container">
       <h2>followers</h2>
@@ -34,6 +35,7 @@
     </div>
   </p-tabPanel>
   <p-tabPanel header="Following" leftIcon="pi pi-users">
+    <p-scrollTop></p-scrollTop>
 
     <h2>Followed-By </h2>
     <div class="followers-content">

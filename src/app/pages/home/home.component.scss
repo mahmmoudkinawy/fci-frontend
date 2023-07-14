@@ -7,25 +7,18 @@
   background-image: #fff;
 }
 
-.content {
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 110px;
-}
-
 .logo-image {
   width: 570px;
-  height: 560px;
+  height: 450px;
   position: absolute;
   left: 54%;
-  top: 23%;
+  top: 20%;
 }
 
 h1 {
   font-size: 32px;
   margin-top: 20px;
   color: #fff;
-
 }
 
 p {
@@ -34,15 +27,50 @@ p {
   color: #fff;
 }
 
-.image{
+.image {
   position: absolute;
   left: 0px;
   top: 68px;
   background-color: #3649b0;
   border-bottom: 2px solid #fff;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   z-index: -1;
 }
 
+.content {
+  display: flex;
+  position: absolute;
+  top: 90%;
+}
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // border: 1px solid #ccc;
+  // border-radius: 4px;
+  padding: 20px;
+  margin: 70px;
+}
+
+.card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card .description {
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}

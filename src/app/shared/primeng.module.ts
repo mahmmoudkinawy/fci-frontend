@@ -24,6 +24,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { SkeletonModule } from 'primeng/skeleton';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { MenuModule } from 'primeng/menu';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 const PrimeNgComponents = [
   ButtonModule,
@@ -50,6 +51,7 @@ const PrimeNgComponents = [
   SkeletonModule,
   SplitButtonModule,
   MenuModule,
+  ScrollTopModule,
 ];
 
 @NgModule({
