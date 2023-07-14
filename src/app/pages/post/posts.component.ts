@@ -284,7 +284,7 @@ export class PostsComponent implements OnInit, OnDestroy {
     { word: 'good', color: 'green' },
     { word: 'awesome', color: 'purple' },
     { word: 'fantastic', color: 'orange' },
-    { word: 'excellent', color: 'red' },
+    { word: 'excellent', color: 'purple' },
   ];
 
   createComment(postId: string): void {
