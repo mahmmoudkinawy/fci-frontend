@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       routerLinkActiveOptions: { exact: true },
     },
     {
-      label: `courses`,
+      label: `tracks`,
       icon: 'pi pi-book',
       items: [
         {
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
           routerLinkActiveOptions: { exact: true },
         },
         {
-          label: 'courses&jobs',
+          label: 'tracks',
           icon: 'pi pi-book',
           command: () => this.router.navigateByUrl('/courses'),
         },
